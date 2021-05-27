@@ -60,3 +60,10 @@ img {
   border-bottom-style: solid;
   padding-bottom: 1px;
 }
+
+#about {
+  width: 80vw;
+  padding-top: 20px;
+  margin: 0 15vw 0 5vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
