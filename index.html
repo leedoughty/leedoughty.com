@@ -4,48 +4,144 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lee Doughty</title>
-    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <link rel="apple-touch-icon" href="logo192.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Lee Doughty</a></li>
-          <li><a href="about.html">About</a></li>
+    <header id="header">
+      <nav id="nav">
+        <a id="heading" href="index.html">Lee Doughty</a>
+        <ul class="list-items">
+          <li class="list-item">
+            <a class="list-link" href="/">Works</a>
+          </li>
+          <li class="list-item">
+            <a class="list-link" href="about.html">About</a>
+          </li>
+          <li class="list-item">
+            <a class="list-link" href="contact.html">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
+    <button class="light-switch"></button>
     <main id="homepage-container">
       <div class="work-container">
-        <section class="work">
-          <a href="https://onomato.netlify.app">
-            <img src="onomato.jpg" alt="Website documenting Japanese onomatopoeia words" />
-          </a>
-          <a href="https://onomato.netlify.app" class="work-title">Onomato</a>
-        </section>
+        <a class="work-image-link" href="works/colourful-brutalist/index.html">
+          <img
+            src="colourful-brutalist.jpg"
+            alt="Geometric colourful modernist architecture"
+            class="work-image"
+          />
+        </a>
+        <a href="works/colourful-brutalist/index.html" class="work-title"
+          >Colourful Brutalist</a
+        >
       </div>
       <div class="work-container">
-        <section class="work">
-          <a href="https://leedoughty-io-prototype.netlify.app">
-            <img
-              src="rainbow-concrete.jpg"
-              alt="Website showing geometric colourful modernist architecture"
-            />
-          </a>
-          <a href="https://leedoughty-io-prototype.netlify.app" class="work-title">Experiments</a>
-        </section>
+        <a class="work-image-link" href="works/colliding-circles/index.html">
+          <img
+            src="colliding-circles.jpg"
+            alt="Many colliding concentric circles"
+            class="work-image"
+          />
+        </a>
+        <a href="works/colliding-circles/index.html" class="work-title"
+          >Colliding Circles</a
+        >
       </div>
       <div class="work-container">
-        <section class="work">
-          <a href="https://nodulesofflint.com">
-            <img src="nodules-of-flint.jpg" alt="Website documenting rocks from Brighton Beach" />
-          </a>
-          <a href="https://nodulesofflint.com" class="work-title">Nodules of Flint website</span>
-        </section>
+        <a
+          class="work-image-link"
+          href="works/quadrilateral-attractor/index.html"
+        >
+          <img
+            src="quadrilateral-attractor.jpg"
+            alt="Many colourful quadrilateral shapes"
+            class="work-image"
+          />
+        </a>
+        <a href="works/quadrilateral-attractor/index.html" class="work-title"
+          >Quadrilateral Attractor</a
+        >
+      </div>
+      <div class="work-container">
+        <a class="work-image-link" href="works/concentric-circles/index.html">
+          <img
+            src="concentric-circles.jpg"
+            alt="Many colourful concentric circles"
+            class="work-image"
+          />
+        </a>
+        <a href="works/concentric-circles/index.html" class="work-title"
+          >Concentric Circles</a
+        >
+      </div>
+      <div class="work-container">
+        <a class="work-image-link" href="works/generative-logo/index.html">
+          <img
+            src="generative-logo.jpg"
+            alt="Colourful layering geometric shapes"
+            class="work-image"
+          />
+        </a>
+        <a href="works/generative-logo/index.html" class="work-title"
+          >Generative logo</a
+        >
+      </div>
+      <div class="work-container">
+        <a class="work-image-link" href="works/circles-attractor/index.html">
+          <img
+            src="circles-attractor.jpg"
+            alt="Colourful layering geometric shapes"
+            class="work-image"
+          />
+        </a>
+        <a href="works/circles-attractor/index.html" class="work-title"
+          >Circles Attractor</a
+        >
+      </div>
+      <div class="work-container">
+        <a
+          class="work-image-link"
+          href="works/layering-geometric-shapes/index.html"
+        >
+          <img
+            src="layering-geometric-shapes.jpg"
+            alt="Colourful layering geometric shapes"
+            class="work-image"
+          />
+        </a>
+        <a href="works/layering-geometric-shapes/index.html" class="work-title"
+          >Layering Shapes</a
+        >
+      </div>
+      <div class="work-container">
+        <a class="work-image-link" href="works/layering-shapes/index.html">
+          <img
+            src="layering-shapes.jpg"
+            alt="Colourful layering geometric shapes"
+            class="work-image"
+          />
+        </a>
+        <a href="works/layering-shapes/index.html" class="work-title"
+          >Layering Shapes</a
+        >
+      </div>
+      <div class="work-container">
+        <a class="work-image-link" href="works/pixel-brush/index.html">
+          <img
+            src="pixel-brush.jpg"
+            alt="Colourful layering geometric shapes"
+            class="work-image"
+          />
+        </a>
+        <a href="works/pixel-brush/index.html" class="work-title"
+          >Pixel Brush</a
+        >
       </div>
     </main>
-    <script src="script.js"></script>
   </body>
+  <script type="module" src="main.js"></script>
 </html>
