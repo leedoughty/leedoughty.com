@@ -52,3 +52,9 @@ body {
     height: 100vh;
   }
 }
+
+.green,
+.pink,
+.blue {
+  transition: fill 0.1s ease;
+}
