@@ -77,4 +77,4 @@ function replaceRandomSvg() {
   }
 }
 
-setInterval(replaceRandomSvg, 500);
+setInterval(replaceRandomSvg, 1000);
