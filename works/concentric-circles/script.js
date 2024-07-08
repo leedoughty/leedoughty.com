@@ -1,5 +1,5 @@
 const grid = document.querySelector("#grid");
-const amountOfBoxes = 30;
+const amountOfBoxes = 15;
 
 function generateRandomColour() {
   const colours = [
@@ -39,7 +39,7 @@ function generateNumberFromInterval(min, max) {
 function makeCircles() {
   let randomNumberOfCircles = generateNumberFromInterval(2, 5);
   let radius = 80;
-  let circles;
+  let circles = "";
 
   for (let i = 0; i < randomNumberOfCircles; i++) {
     circles += `<circle cx="100" cy="100" r="${radius}" stroke="none" fill="${generateRandomColour()}" />`;
@@ -58,8 +58,23 @@ function makeCircles() {
   return circles;
 }
 
-[...Array(amountOfBoxes)].forEach((x, i) => {
-  grid.innerHTML += `<svg class="item">
-    ${makeCircles()}
-  </svg>`;
-});
+function createSvg() {
+  return `<svg class="item">${makeCircles()}</svg>`;
+}
+
+for (let i = 0; i < amountOfBoxes; i++) {
+  grid.innerHTML += createSvg();
+}
+
+function replaceRandomSvg() {
+  const items = document.querySelectorAll(".item");
+
+  if (items.length > 0) {
+    const randomIndex = Math.floor(Math.random() * items.length);
+    const randomItem = items[randomIndex];
+
+    randomItem.outerHTML = createSvg();
+  }
+}
+
+setInterval(replaceRandomSvg, 500);
