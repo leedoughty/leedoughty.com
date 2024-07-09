@@ -140,8 +140,8 @@ function Particle(x, y, radius, colours, numberOfCircles, radiusToMinus) {
   this.x = x;
   this.y = y;
   this.velocity = {
-    x: Math.random() - 0.5,
-    y: Math.random() - 0.5,
+    x: Math.random() - 1,
+    y: Math.random() - 1,
   };
   this.radius = radius;
   this.colours = colours;
@@ -194,8 +194,8 @@ function Particle(x, y, radius, colours, numberOfCircles, radiusToMinus) {
     }
 
     c.beginPath();
-    c.arc(this.x, this.y, 20, 0, Math.PI * 2, false);
-    c.fillStyle = "#f5f5f5";
+    c.arc(this.x, this.y, 15, 0, Math.PI * 2, false);
+    c.fillStyle = "#efefe6";
     c.fill();
     c.closePath();
   };
@@ -204,7 +204,7 @@ function Particle(x, y, radius, colours, numberOfCircles, radiusToMinus) {
 let particles;
 
 function init() {
-  numberOfCircles = window.innerWidth > 600 ? 10 : 3;
+  numberOfCircles = window.innerWidth > 600 ? 7 : 3;
   particles = [];
 
   for (let i = 0; i < numberOfCircles; i++) {
