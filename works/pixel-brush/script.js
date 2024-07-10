@@ -70,22 +70,22 @@ function headsOrTails() {
 function draw(event) {
   let randomBrushSize = Math.floor(Math.random() * 100 + 10);
   let randomBrushSize2 = Math.floor(Math.random() * 150 + 50);
-  let randomBrushSize3 = Math.floor(Math.random() * 250 + 100);
+  let randomBrushSize3 = Math.floor(Math.random() * 200 + 100);
 
   const randomLoc = (upperLimit) => {
-    return Math.floor(Math.random() * upperLimit);
+    return Math.floor(Math.random() * (upperLimit * 2 + 1)) - upperLimit;
   };
 
   if (headsOrTails()) {
-    drawWithBrush(300, colour3, randomBrushSize, randomLoc, event);
+    drawWithBrush(500, colour2, randomBrushSize3, randomLoc, event);
   }
 
   if (headsOrTails()) {
-    drawWithBrush(500, colour1, randomBrushSize2, randomLoc, event);
+    drawWithBrush(100, colour3, randomBrushSize, randomLoc, event);
   }
 
   if (headsOrTails()) {
-    drawWithBrush(300, colour2, randomBrushSize3, randomLoc, event);
+    drawWithBrush(50, colour1, randomBrushSize2, randomLoc, event);
   }
 
   if (!isDrawing) return;
