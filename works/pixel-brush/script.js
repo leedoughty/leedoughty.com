@@ -1,60 +1,37 @@
 const canvas = document.querySelector("#draw");
 const ctx = canvas.getContext("2d");
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-ctx.strokeStyle = "rgb(255, 126, 0)";
+
 ctx.lineJoin = "round";
 ctx.lineCap = "square";
 
 function generateColour() {
   const colours = [
-    "#e8441f",
-    "#fa920d",
     "#f4cd00",
-    "#54ab1d",
+    "#fa920d",
+    "#e8441f",
+    "#46c35b",
+    "#3ba7ff",
     "#3d58e3",
     "#e195bb",
-    "#aa4d7e",
-    "#34495e",
-    "#fffeff",
-    "#949398FF",
-    "#F4DF4EFF",
-    "#FC766AFF",
-    "#5B84B1FF",
-    "#5F4B8BFF",
-    "#E69A8DFF",
-    "#42EADDFF",
-    "#CDB599FF",
-    "#00A4CCFF",
-    "#F95700FF",
-    "#00203FFF",
-    "#ADEFD1FF",
-    "#606060FF",
-    "#D6ED17FF",
-    "#ED2B33FF",
-    "#D85A7FFF",
-    "#2C5F2D",
-    "#97BC62FF",
-    "#00539CFF",
-    "#EEA47FFF",
-    "#0063B2FF",
-    "#9CC3D5FF",
-    "#D198C5FF",
-    "#E0C568FF",
-    "#101820FF",
-    "#FEE715FF",
-    "#CBCE91FF",
-    "#EA738DFF",
-    "#F93822FF",
-    "#FDD20EFF",
+    "#05d6f0",
+    "#fe5a01",
+    "#ff7469",
+    "#a44cd3",
+    "#f1c40f",
+    "#ffae42",
+    "#228c22",
+    "#e090df",
+    "#ff2c2c",
+    "#ffea00",
+    "#54ab1d",
   ];
 
   let randomNumber = Math.floor(Math.random() * colours.length);
   return colours[randomNumber];
 }
-
-const colour1 = generateColour();
-const colour2 = generateColour();
 
 let isDrawing = false;
 let lastX = 0;
@@ -62,31 +39,56 @@ let lastY = 0;
 let hue = 0;
 let direction = true;
 
-function draw(e) {
-  let randomBrushSize = Math.floor(Math.random() * 100 + 10);
-  const randomLoc = () => {
-    return Math.floor(Math.random() * 300);
-  };
-
-  ctx.lineWidth = randomBrushSize;
+function drawWithBrush(upperLimit, colour, brushSize, randomLoc, event) {
   if (!isDrawing) return;
-  ctx.strokeStyle = colour1;
+  ctx.lineWidth = brushSize;
+  ctx.strokeStyle = colour;
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
   ctx.stroke();
-  ctx.fillStyle = colour1;
-  ctx.fillRect(lastX + randomLoc(), lastY + randomLoc(), randomBrushSize, randomBrushSize);
-  [lastX, lastY] = [e.offsetX ?? e.touches[0].clientX, e.offsetY ?? e.touches[0].clientY];
+  ctx.fillStyle = colour;
+  ctx.fillRect(
+    lastX + randomLoc(upperLimit),
+    lastY + randomLoc(upperLimit),
+    brushSize,
+    brushSize
+  );
+  [lastX, lastY] = [
+    event.offsetX ?? event.touches[0].clientX,
+    event.offsetY ?? event.touches[0].clientY,
+  ];
+}
 
-  let randomBrushSize2 = Math.floor(Math.random() * 100 + 10);
-  ctx.lineWidth = randomBrushSize2;
-  ctx.strokeStyle = colour2;
-  ctx.beginPath();
-  ctx.moveTo(lastX + 200, lastY);
-  ctx.stroke();
-  ctx.fillStyle = colour2;
-  ctx.fillRect(lastX + randomLoc(), lastY + randomLoc(), randomBrushSize2, randomBrushSize2);
-  [lastX, lastY] = [e.offsetX ?? e.touches[0].clientX, e.offsetY ?? e.touches[0].clientY];
+let colour1 = generateColour();
+let colour2 = generateColour();
+let colour3 = generateColour();
+
+function headsOrTails() {
+  return Math.floor(Math.random() * 10) === 0;
+}
+
+function draw(event) {
+  let randomBrushSize = Math.floor(Math.random() * 100 + 10);
+  let randomBrushSize2 = Math.floor(Math.random() * 150 + 50);
+  let randomBrushSize3 = Math.floor(Math.random() * 250 + 100);
+
+  const randomLoc = (upperLimit) => {
+    return Math.floor(Math.random() * upperLimit);
+  };
+
+  if (headsOrTails()) {
+    drawWithBrush(300, colour3, randomBrushSize, randomLoc, event);
+  }
+
+  if (headsOrTails()) {
+    drawWithBrush(500, colour1, randomBrushSize2, randomLoc, event);
+  }
+
+  if (headsOrTails()) {
+    drawWithBrush(300, colour2, randomBrushSize3, randomLoc, event);
+  }
+
+  if (!isDrawing) return;
 }
 
 canvas.addEventListener("mousemove", (e) => {
@@ -110,3 +112,9 @@ canvas.addEventListener("touchend", function (event) {
 });
 
 document.addEventListener("touchmove", draw);
+
+document.addEventListener("click", () => {
+  colour1 = generateColour();
+  colour2 = generateColour();
+  colour3 = generateColour();
+});

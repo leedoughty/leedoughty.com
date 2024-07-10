@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -6,9 +8,10 @@
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  background: #e9e3d5;
+  background: #efefe6;
   cursor: none;
   touch-action: none;
 }
@@ -18,7 +21,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
