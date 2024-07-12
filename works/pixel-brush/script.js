@@ -9,24 +9,15 @@ ctx.lineCap = "square";
 
 function generateColour() {
   const colours = [
-    "#f4cd00",
-    "#fa920d",
     "#e8441f",
-    "#46c35b",
-    "#3ba7ff",
-    "#3d58e3",
-    "#e195bb",
-    "#05d6f0",
-    "#fe5a01",
-    "#ff7469",
-    "#a44cd3",
-    "#f1c40f",
-    "#ffae42",
-    "#228c22",
-    "#e090df",
-    "#ff2c2c",
-    "#ffea00",
-    "#54ab1d",
+    "#f9a825",
+    "#ffd700",
+    "#66bb6a",
+    "#42a5f5",
+    "#ec407a",
+    "#e9e3d5",
+    "#ffffff",
+    "#455a71",
   ];
 
   let randomNumber = Math.floor(Math.random() * colours.length);
@@ -63,8 +54,8 @@ let colour1 = generateColour();
 let colour2 = generateColour();
 let colour3 = generateColour();
 
-function headsOrTails() {
-  return Math.floor(Math.random() * 10) === 0;
+function rollTheDice() {
+  return Math.floor(Math.random() * 15) === 0;
 }
 
 function draw(event) {
@@ -76,15 +67,15 @@ function draw(event) {
     return Math.floor(Math.random() * (upperLimit * 2 + 1)) - upperLimit;
   };
 
-  if (headsOrTails()) {
+  if (rollTheDice()) {
     drawWithBrush(500, colour2, randomBrushSize3, randomLoc, event);
   }
 
-  if (headsOrTails()) {
+  if (rollTheDice()) {
     drawWithBrush(100, colour3, randomBrushSize, randomLoc, event);
   }
 
-  if (headsOrTails()) {
+  if (rollTheDice()) {
     drawWithBrush(50, colour1, randomBrushSize2, randomLoc, event);
   }
 
