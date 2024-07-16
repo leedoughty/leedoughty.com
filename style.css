@@ -159,6 +159,32 @@ a {
   height: auto;
 }
 
+.contact-links {
+  margin-top: 40px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-link-item {
+  padding-top: 40px;
+}
+
+.contact-link {
+  font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  border: 1.5px solid black;
+  padding: 8px 12px;
+}
+
+.contact-link-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-link-item a:focus {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 768px) {
   #homepage-container {
     display: grid;
