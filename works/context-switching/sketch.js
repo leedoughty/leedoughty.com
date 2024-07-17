@@ -35,7 +35,7 @@ const colours = [
 
 const sketch = (p) => {
   p.setup = () => {
-    p.createCanvas(p.windowWidth - 500, p.windowHeight - 200);
+    p.createCanvas(p.windowWidth, p.windowHeight);
     p.background("#efefe6");
 
     x = p.random(p.width - 120);
