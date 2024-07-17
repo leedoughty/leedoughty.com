@@ -22,6 +22,9 @@ function applyDarkMode() {
   document.querySelectorAll(".list-link").forEach((link) => {
     link.classList.add("dark-mode-nav-links");
   });
+  document.querySelectorAll(".contact-link").forEach((link) => {
+    link.classList.add("dark-mode-contact-links");
+  });
   lightSwitch.classList.add("dark-mode-light-switch");
 }
 
@@ -33,6 +36,9 @@ function removeDarkMode() {
   });
   document.querySelectorAll(".list-link").forEach((link) => {
     link.classList.remove("dark-mode-nav-links");
+  });
+  document.querySelectorAll(".contact-link").forEach((link) => {
+    link.classList.remove("dark-mode-contact-links");
   });
   lightSwitch.classList.remove("dark-mode-light-switch");
 }
