@@ -51,6 +51,8 @@ body {
   padding: 0;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
+  gap: 35px 5px;
 }
 
 .list-item {
@@ -79,10 +81,11 @@ a {
   font-size: 16px;
   border: 1.5px solid black;
   padding: 8px 12px;
+  white-space: nowrap;
 }
 
 .list-item {
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 
 #artworks-container {
@@ -346,6 +349,7 @@ a {
   .list-items {
     padding-top: 30px;
     flex-direction: column;
+    gap: 20px 10px;
   }
 
   .list-item {
