@@ -17,7 +17,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         about: resolve(__dirname, "about.html"),
         contact: resolve(__dirname, "contact.html"),
-        experiments: resolve(__dirname, "experiments.html"),
+        artworks: resolve(__dirname, "artworks.html"),
         ...pages,
       },
     },

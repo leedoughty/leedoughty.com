@@ -8,6 +8,16 @@
   src: url("/fonts/roboto-mono.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: FarnhamDisplayLight;
+  src: url("/fonts/farnham-display-light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: FarnhamDisplayMedium;
+  src: url("/fonts/farnham-display-medium.otf") format("opentype");
+}
+
 body {
   background-color: rgb(245, 245, 245);
   padding: 0;
@@ -75,13 +85,58 @@ a {
   padding-bottom: 20px;
 }
 
-#homepage-container {
+#artworks-container {
   min-height: 100vh;
   padding-top: 10px;
   width: 90vw;
   margin: 0 5vw 0 5vw;
   display: flex;
   flex-direction: column;
+}
+
+#homepage-container {
+  min-height: 100vh;
+  width: 90vw;
+  margin: 0 5vw 0 5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#homepage-text {
+  font-size: 2em;
+  color: #2e3440;
+  font-family: FarnhamDisplayLight, Garamond, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+}
+
+#homepage-face {
+  height: 1em;
+  width: 1em;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: -0.15em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.homepage-link {
+  font-size: 1em;
+  color: #3d58e3;
+  font-family: FarnhamDisplayMedium, Garamond, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+}
+
+.homepage-link:hover {
+  text-decoration: underline;
+}
+
+.dark-mode #homepage-text {
+  color: #dce3e9;
+}
+
+.dark-mode .homepage-link {
+  color: #3ba7ff;
 }
 
 .work-container {
@@ -191,7 +246,7 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-  #homepage-container {
+  #artworks-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     top: 30px;
@@ -199,6 +254,17 @@ a {
     margin: 35px 5vw 0 5vw;
     gap: 5vw;
     padding-bottom: 80px;
+  }
+
+  #homepage-container {
+    min-height: 0;
+    margin: 35px 5vw 0 5vw;
+    gap: 5vw;
+    padding-bottom: 80px;
+  }
+
+  #homepage-text {
+    font-size: 3em;
   }
 
   .work-container {
@@ -224,17 +290,27 @@ a {
 }
 
 @media screen and (min-width: 1150px) {
-  #homepage-container {
+  #artworks-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     position: absolute;
     top: 30px;
     left: max(250px, calc((100vw - 900px) / 2));
-    width: 70vw;
     min-height: 0;
     margin: 35px 5vw 0 5vw;
-    gap: 5px;
     padding-bottom: 0px;
+    width: 900px;
+    gap: 20px;
+  }
+
+  #homepage-container {
+    position: absolute;
+    left: max(250px, calc((100vw - 900px) / 2));
+    min-height: 0;
+    margin: 35px 5vw 0 5vw;
+    padding-bottom: 0px;
+    width: 1050px;
+    gap: 20px;
   }
 
   #header {
@@ -284,11 +360,6 @@ a {
   .work-container {
     width: 80%;
     padding-bottom: 30px;
-  }
-
-  #homepage-container {
-    width: 900px;
-    gap: 20px;
   }
 
   .layout {
