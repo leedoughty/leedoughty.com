@@ -73,7 +73,7 @@ let palette = [
   "#ff99c8",
 ];
 
-const n = 600;
+const n = 500;
 const maxH = 1000;
 const minH = 100;
 const maxW = 500;
@@ -104,20 +104,19 @@ window.draw = () => {
 
   orbitControl(1, 1, 0.3);
 
-  ambientLight(120);
-  directionalLight(200, 200, 200, -0.5, -1, -0.3);
-  pointLight(150, 150, 255, 0, 0, 300);
-
   randomSeed(seed);
   noiseSeed(seed);
 
   for (let i = 0; i < n; i++) {
     push();
-
-    let c = color(palette[i % palette.length]);
-    c.setAlpha(map(sin(t + i * 0.1), -1, 1, 60, 160));
+    let base = palette[i % palette.length];
+    let c = color(
+      base.levels[0],
+      base.levels[1],
+      base.levels[2],
+      map(sin(t + i * 0.1), -1, 1, 100, 220)
+    );
     fill(c);
-    ambientMaterial(c);
     shininess(20);
 
     let w = map(sin(i * 0.1), -1, 1, minW, maxW);
