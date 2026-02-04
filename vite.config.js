@@ -10,7 +10,20 @@ const pages = fs.readdirSync("./works").reduce((entries, folder) => {
   return entries;
 }, {});
 
+function htmlPartials() {
+  return {
+    name: "html-partials",
+    transformIndexHtml(html) {
+      return html.replace(
+        "{{header}}",
+        fs.readFileSync("./partials/header.html", "utf-8"),
+      );
+    },
+  };
+}
+
 export default defineConfig({
+  plugins: [htmlPartials()],
   build: {
     rollupOptions: {
       input: {
