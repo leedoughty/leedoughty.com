@@ -71,7 +71,11 @@ a {
 }
 
 #heading {
-  font-family: Din Pro, Arial, Helvetica, sans-serif;
+  font-family:
+    Din Pro,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-size: 28px;
 }
 
@@ -108,7 +112,8 @@ a {
 #homepage-text {
   font-size: 2em;
   color: #2e3440;
-  font-family: FarnhamDisplayLight, Garamond, Cambria, Cochin, Georgia, Times,
+  font-family:
+    FarnhamDisplayLight, Garamond, Cambria, Cochin, Georgia, Times,
     "Times New Roman", serif;
 }
 
@@ -126,7 +131,8 @@ a {
 .homepage-link {
   font-size: 1em;
   color: #3d58e3;
-  font-family: FarnhamDisplayMedium, Garamond, Cambria, Cochin, Georgia, Times,
+  font-family:
+    FarnhamDisplayMedium, Garamond, Cambria, Cochin, Georgia, Times,
     "Times New Roman", serif;
 }
 
@@ -248,6 +254,64 @@ a {
   border: 1.5px solid #dce3e9;
 }
 
+.about-intro {
+  font-family:
+    FarnhamDisplayLight, Garamond, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #2e3440;
+}
+
+.dark-mode .about-intro {
+  color: #dce3e9;
+}
+
+.skills-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 35px;
+  padding-bottom: 60px;
+}
+
+.skills-heading {
+  font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2e3440;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 12px 0;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-list li {
+  font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  border: 1.5px solid #2e3440;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.dark-mode .skills-list li {
+  border-color: #dce3e9;
+  color: #dce3e9;
+}
+
+.dark-mode .skills-heading {
+  color: #dce3e9;
+}
+
 @media screen and (min-width: 768px) {
   #artworks-container {
     display: grid;
@@ -289,6 +353,15 @@ a {
 
   .layout {
     margin: 35px 5vw 0 5vw;
+  }
+
+  .skills-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #picture-of-me {
+    max-width: 50%;
+    height: auto;
   }
 }
 
@@ -374,5 +447,9 @@ a {
     width: 40vw;
     min-height: 0;
     margin: 0 45vw 0 5vw;
+  }
+
+  .about-layout {
+    width: 900px;
   }
 }
