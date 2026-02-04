@@ -11,13 +11,21 @@
   <body>
     {{header}}
     <section class="layout about-layout">
-      <h2 class="section-title">About</h2>
-      <p class="about-intro">
-        Hi, I'm Lee, a Software Engineer based in London with over six years of
-        experience building high-quality, user-focused software. I work across
-        the full stack to deliver scalable, reliable applications.
-      </p>
-      <img id="picture-of-me" src="me.jpg" />
+      <div class="about-main">
+        <h2 class="section-title">About</h2>
+        <img id="picture-of-me" src="me.jpg" />
+        <p class="about-intro">
+          Hi, I'm Lee, a Software Engineer based in London with over six years
+          of experience building high-quality, user-focused software. I work
+          across the full stack to deliver scalable, reliable applications.
+        </p>
+        <p class="about-intro">
+          I care deeply about craft, writing clean, well-tested code and
+          shipping products that people enjoy using. Outside of work, I explore
+          creative coding and generative art, which keeps me curious and
+          experimenting with new ideas.
+        </p>
+      </div>
       <div class="skills-columns">
         <div class="skills-column">
           <h3 class="skills-heading">Frontend</h3>
@@ -46,18 +54,23 @@
             <li>DynamoDB</li>
             <li>PostgreSQL</li>
             <li>OAuth 2.0</li>
+            <li>OIDC</li>
           </ul>
         </div>
         <div class="skills-column">
           <h3 class="skills-heading">Cloud & DevOps</h3>
           <ul class="skills-list">
-            <li>AWS Lambda</li>
+            <li>AWS</li>
+            <li>Lambda</li>
             <li>EC2</li>
             <li>S3</li>
             <li>CloudWatch</li>
+            <li>CodeBuild</li>
+            <li>CodePipeline</li>
             <li>Docker</li>
             <li>CI/CD</li>
             <li>Git</li>
+            <li>Terminal</li>
             <li>Bash</li>
             <li>SSL</li>
           </ul>

@@ -88,10 +88,6 @@ a {
   white-space: nowrap;
 }
 
-.list-item {
-  /* padding-bottom: 20px; */
-}
-
 #artworks-container {
   min-height: 100vh;
   padding-top: 10px;
@@ -360,7 +356,7 @@ a {
   }
 
   #picture-of-me {
-    max-width: 50%;
+    max-width: 65%;
     height: auto;
   }
 }
@@ -451,5 +447,24 @@ a {
 
   .about-layout {
     width: 900px;
+    display: flex;
+    gap: 40px;
+  }
+
+  .about-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .about-layout .skills-columns {
+    grid-template-columns: 1fr;
+    flex-shrink: 0;
+    width: 280px;
+    margin-top: 0;
+    padding-top: 66px;
+  }
+
+  .about-layout #picture-of-me {
+    max-width: 100%;
   }
 }
