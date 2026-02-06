@@ -297,6 +297,8 @@ a {
   border: 1.5px solid #2e3440;
   padding: 6px 10px;
   white-space: nowrap;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  cursor: default;
 }
 
 .dark-mode .skills-list li {
@@ -306,6 +308,25 @@ a {
 
 .dark-mode .skills-heading {
   color: #dce3e9;
+}
+
+.skills-list li.skill-lit {
+  background-color: var(--skill-bg);
+  color: var(--skill-text);
+  border-color: var(--skill-bg);
+}
+
+.skills-list li:hover {
+  background-color: var(--skill-bg);
+  color: var(--skill-text);
+  border-color: var(--skill-bg);
+  transition-duration: 0.15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-list li {
+    transition: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
