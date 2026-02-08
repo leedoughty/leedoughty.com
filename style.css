@@ -45,6 +45,10 @@ a {
   color: black;
 }
 
+.dark-mode a {
+  color: #dce3e9;
+}
+
 .work-image {
   width: 90vw;
   object-fit: cover;
@@ -184,7 +188,6 @@ a {
 }
 
 .layout {
-  margin-top: 0;
   width: 90vw;
   margin: 0 15vw 0 5vw;
   font-family: Arial, Helvetica, sans-serif;
@@ -194,6 +197,10 @@ a {
   font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
   font-weight: 700;
   color: rgb(135, 135, 135);
+}
+
+.dark-mode .section-title {
+  color: rgb(180, 180, 180);
 }
 
 #picture-of-me {
