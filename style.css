@@ -208,13 +208,27 @@ a {
   height: auto;
 }
 
+.contact-intro {
+  font-family:
+    "farnham-display", Garamond, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  font-weight: 300;
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #2e3440;
+  margin-bottom: 35px;
+}
+
+.dark-mode .contact-intro {
+  color: #dce3e9;
+}
+
 .contact-links {
   list-style-type: none;
   padding: 0;
 }
 
 .contact-link-item {
-  padding-top: 40px;
   animation: contact-emerge 0.5s ease both;
 }
 
@@ -254,6 +268,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  margin-top: 30px;
   transition: border-color 0.3s ease;
 }
 
@@ -632,5 +647,16 @@ a {
 
   .about-layout #picture-of-me {
     max-width: 100%;
+  }
+
+  .contact-intro {
+    margin-top: 50px;
+  }
+
+  .contact-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 10px;
   }
 }
