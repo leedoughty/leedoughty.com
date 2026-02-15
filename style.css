@@ -292,6 +292,9 @@ a {
 .contact-link[data-brand="instagram"] {
   --brand-color: #e1306c;
 }
+.contact-link[data-brand="bluesky"] {
+  --brand-color: #0085ff;
+}
 
 .contact-link:hover,
 .contact-link:focus {
@@ -327,6 +330,10 @@ a {
 
 .contact-link[data-brand="instagram"]:hover .contact-icon {
   animation: icon-instagram 0.4s ease;
+}
+
+.contact-link[data-brand="bluesky"]:hover .contact-icon {
+  animation: icon-bluesky 0.5s ease;
 }
 
 @keyframes icon-email {
@@ -368,6 +375,16 @@ a {
   }
   50% {
     transform: scaleX(1.25);
+  }
+}
+
+@keyframes icon-bluesky {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.1);
   }
 }
 
