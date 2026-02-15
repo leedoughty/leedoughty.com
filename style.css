@@ -209,13 +209,40 @@ a {
 }
 
 .contact-links {
-  margin-top: 40px;
   list-style-type: none;
   padding: 0;
 }
 
 .contact-link-item {
   padding-top: 40px;
+  animation: contact-emerge 0.5s ease both;
+}
+
+.contact-link-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.contact-link-item:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.contact-link-item:nth-child(3) {
+  animation-delay: 0.19s;
+}
+.contact-link-item:nth-child(4) {
+  animation-delay: 0.26s;
+}
+.contact-link-item:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+@keyframes contact-emerge {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-link {
@@ -223,20 +250,150 @@ a {
   font-weight: 400;
   font-size: 16px;
   border: 1.5px solid black;
-  padding: 8px 12px;
+  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.3s ease;
 }
 
-.contact-link-item a:hover {
-  text-decoration: underline;
+.contact-icon {
+  flex-shrink: 0;
+  transition: color 0.3s ease;
 }
 
-.contact-link-item a:focus {
+.contact-link[data-brand="email"] {
+  --brand-color: #d44638;
+}
+.contact-link[data-brand="github"] {
+  --brand-color: #8b5cf6;
+}
+.contact-link[data-brand="x"] {
+  --brand-color: #1d9bf0;
+}
+.contact-link[data-brand="openprocessing"] {
+  --brand-color: #3b82f6;
+}
+.contact-link[data-brand="instagram"] {
+  --brand-color: #e1306c;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  border-color: var(--brand-color);
+}
+
+.contact-link:hover span,
+.contact-link:focus span {
   text-decoration: underline;
+  color: var(--brand-color);
+}
+
+.contact-link:hover .contact-icon,
+.contact-link:focus .contact-icon {
+  color: var(--brand-color);
+}
+
+.contact-link[data-brand="email"]:hover .contact-icon {
+  animation: icon-email 0.5s ease;
+}
+
+.contact-link[data-brand="github"]:hover .contact-icon {
+  animation: icon-github 0.5s ease;
+}
+
+.contact-link[data-brand="x"]:hover .contact-icon {
+  animation: icon-x 0.4s ease;
+}
+
+.contact-link[data-brand="openprocessing"]:hover .contact-icon {
+  animation: icon-openprocessing 0.5s ease;
+}
+
+.contact-link[data-brand="instagram"]:hover .contact-icon {
+  animation: icon-instagram 0.4s ease;
+}
+
+@keyframes icon-email {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.05);
+  }
+}
+
+@keyframes icon-github {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes icon-x {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon-openprocessing {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.25);
+  }
+}
+
+@keyframes icon-instagram {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.15);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
 }
 
 .dark-mode-contact-links {
   color: #dce3e9;
   border: 1.5px solid #dce3e9;
+}
+
+.dark-mode-contact-links:hover,
+.dark-mode-contact-links:focus {
+  border-color: var(--brand-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-link-item {
+    animation: none;
+  }
+  .contact-link,
+  .contact-icon {
+    transition: none;
+  }
+  .contact-link:hover .contact-icon,
+  .contact-link:focus .contact-icon {
+    animation: none;
+  }
 }
 
 .about-intro {
