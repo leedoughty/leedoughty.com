@@ -15,6 +15,8 @@ const SKILL_COLOURS = {
   Storybook: { bg: "#FF4785", text: "#ffffff" },
   "Styled Components": { bg: "#DB7093", text: "#ffffff" },
   Accessibility: { bg: "#0056B3", text: "#ffffff" },
+  Jest: { bg: "#C21325", text: "#ffffff" },
+  Playwright: { bg: "#2EAD33", text: "#ffffff" },
   "Node.js": { bg: "#339933", text: "#ffffff" },
   Express: {
     bg: "#000000",
@@ -33,6 +35,9 @@ const SKILL_COLOURS = {
   PostgreSQL: { bg: "#4169E1", text: "#ffffff" },
   "OAuth 2.0": { bg: "#EB5424", text: "#ffffff" },
   OIDC: { bg: "#F78C40", text: "#ffffff" },
+  Serverless: { bg: "#FD5750", text: "#ffffff" },
+  MySQL: { bg: "#4479A1", text: "#ffffff" },
+  Nock: { bg: "#1D7EB2", text: "#ffffff" },
   AWS: { bg: "#FF9900", text: "#232F3E" },
   Lambda: { bg: "#FF9900", text: "#232F3E" },
   EC2: { bg: "#FF9900", text: "#232F3E" },
@@ -44,7 +49,12 @@ const SKILL_COLOURS = {
   "CI/CD": { bg: "#40BE46", text: "#ffffff" },
   Git: { bg: "#F05032", text: "#ffffff" },
   Terminal: { bg: "#4D4D4D", text: "#00FF00" },
+  Python: { bg: "#3776AB", text: "#FFD43B" },
+  SQL: { bg: "#4479A1", text: "#ffffff" },
   Bash: { bg: "#4EAA25", text: "#ffffff" },
+  IAM: { bg: "#DD344C", text: "#ffffff" },
+  VPC: { bg: "#8C4FFF", text: "#ffffff" },
+  WAF: { bg: "#FF9900", text: "#232F3E" },
   SSL: { bg: "#721412", text: "#ffffff" },
 };
 

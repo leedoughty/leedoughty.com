@@ -555,7 +555,7 @@ a {
   }
 
   .skills-columns {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   #picture-of-me {
@@ -657,7 +657,7 @@ a {
   .about-layout .skills-columns {
     grid-template-columns: 1fr;
     flex-shrink: 0;
-    width: 280px;
+    width: 340px;
     margin-top: 0;
     padding-top: 66px;
   }
