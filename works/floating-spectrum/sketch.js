@@ -114,7 +114,7 @@ window.draw = () => {
       base.levels[0],
       base.levels[1],
       base.levels[2],
-      map(sin(t + i * 0.1), -1, 1, 100, 220)
+      map(sin(t + i * 0.1), -1, 1, 100, 255),
     );
     fill(c);
     shininess(20);
@@ -135,14 +135,14 @@ window.draw = () => {
       0,
       1,
       -height * 1.5,
-      height * 1.5
+      height * 1.5,
     );
     let z = map(
       noise(i * 0.01 + oz + 200, t * 0.1, 30),
       0,
       1,
       -width * 4,
-      -200
+      -200,
     );
 
     translate(x, y, z);
