@@ -31,6 +31,7 @@ export default defineConfig({
         about: resolve(__dirname, "about.html"),
         contact: resolve(__dirname, "contact.html"),
         artworks: resolve(__dirname, "artworks.html"),
+        projects: resolve(__dirname, "projects.html"),
         ...pages,
       },
     },

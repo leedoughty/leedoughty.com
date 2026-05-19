@@ -511,6 +511,286 @@ a {
   }
 }
 
+/* ---- Projects ---- */
+
+.projects-header {
+  margin-bottom: 36px;
+}
+
+.projects-subtitle {
+  font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 10px 0 0;
+  letter-spacing: 0.02em;
+}
+
+.dark-mode .projects-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.projects-list {
+  border-top: 1px solid black;
+}
+
+.dark-mode .projects-list {
+  border-top-color: #dce3e9;
+}
+
+.project-row {
+  padding: 28px 0;
+  border-bottom: 1px solid black;
+}
+
+.dark-mode .project-row {
+  border-bottom-color: #dce3e9;
+}
+
+.project-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-index {
+  font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.06em;
+}
+
+.dark-mode .project-index {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.project-char {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-char img,
+.project-char svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.project-title {
+  margin: 0;
+  font-family:
+    "farnham-display", Garamond, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: #2e3440;
+}
+
+.dark-mode .project-title {
+  color: #dce3e9;
+}
+
+.project-kana {
+  font-family:
+    "roboto-mono", "Noto Sans JP", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+.dark-mode .project-kana {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.project-desc {
+  margin: 18px 0 0;
+  font-family:
+    "farnham-display", Garamond, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.45;
+  color: #2e3440;
+  text-wrap: pretty;
+}
+
+.dark-mode .project-desc {
+  color: #dce3e9;
+}
+
+.project-links {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.project-github {
+  font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 11px;
+  text-decoration: none;
+  color: #2e3440;
+  border: 1.5px solid black;
+  padding: 7px 10px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.dark-mode .project-github {
+  color: #dce3e9;
+  border-color: #dce3e9;
+}
+
+.project-github:hover {
+  text-decoration: underline;
+}
+
+.project-tag {
+  font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.04em;
+}
+
+.dark-mode .project-tag {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.project-gif-col {
+  margin-top: 18px;
+}
+
+.project-gif-placeholder {
+  width: 100%;
+  aspect-ratio: 280 / 170;
+  background: repeating-linear-gradient(
+    135deg,
+    #e8e6e1 0 10px,
+    rgba(26, 26, 26, 0.06) 10px 11px
+  );
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.dark-mode .project-gif-placeholder {
+  background: repeating-linear-gradient(
+    135deg,
+    #3b4252 0 10px,
+    rgba(255, 255, 255, 0.06) 10px 11px
+  );
+  border-color: #dce3e9;
+}
+
+.gif-play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gif-play-btn::after {
+  content: "";
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid black;
+  display: block;
+}
+
+.dark-mode .gif-play-btn::after {
+  background: rgba(46, 52, 64, 0.85);
+  border-color: #dce3e9;
+}
+
+.gif-play-triangle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 2px), -50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.dark-mode .gif-play-triangle {
+  border-left-color: #dce3e9;
+}
+
+.gif-label {
+  font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 11px;
+  background: #fff;
+  border: 1px solid black;
+  padding: 3px 7px;
+  margin: 8px;
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.dark-mode .gif-label {
+  background: #2e3440;
+  border-color: #dce3e9;
+  color: #dce3e9;
+}
+
+.project-fig {
+  font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+}
+
+.dark-mode .project-fig {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.projects-end {
+  font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-top: 20px;
+  margin-bottom: 80px;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.dark-mode .projects-end {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.project-logo-fill {
+  fill: rgb(245, 245, 245);
+}
+
+.dark-mode .project-logo-fill {
+  fill: #2e3440;
+}
+
+/* Mobile: char + title side by side */
+.project-row .project-left {
+  float: left;
+  margin-right: 16px;
+  margin-bottom: 4px;
+}
+
+.project-text {
+  overflow: hidden;
+}
+
 @media screen and (min-width: 768px) {
   #artworks-container {
     display: grid;
@@ -561,6 +841,63 @@ a {
   #picture-of-me {
     max-width: 65%;
     height: auto;
+  }
+
+  .project-row .project-left {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .project-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 280px;
+    column-gap: 28px;
+    align-items: start;
+    padding: 36px 0;
+  }
+
+  .project-char {
+    width: 130px;
+    height: 130px;
+  }
+
+  .project-text {
+    overflow: visible;
+  }
+
+  .project-title {
+    font-size: 32px;
+  }
+
+  .project-desc {
+    font-size: 18px;
+    max-width: 46ch;
+  }
+
+  .project-links {
+    gap: 12px;
+  }
+
+  .project-github {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .project-tag {
+    font-size: 11px;
+  }
+
+  .project-gif-col {
+    margin-top: 0;
+  }
+
+  .project-gif-placeholder {
+    aspect-ratio: 280 / 170;
+  }
+
+  .projects-end {
+    text-align: left;
   }
 }
 
@@ -676,5 +1013,17 @@ a {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 10px;
+  }
+
+  .projects-layout {
+    width: 900px;
+  }
+
+  .project-title {
+    font-size: 36px;
+  }
+
+  .project-desc {
+    font-size: 19px;
   }
 }
