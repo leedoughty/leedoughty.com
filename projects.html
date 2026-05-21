@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Lee Doughty</title>
+    <title>Side Projects - Lee Doughty</title>
     <meta
       name="description"
-      content="Personal projects by Lee Doughty — mostly Japanese-learning tools built in 2024–2025."
+      content="Side projects by Lee Doughty — mostly Japanese-learning tools built in 2024–2025."
     />
-    <meta property="og:title" content="Projects - Lee Doughty" />
+    <meta property="og:title" content="Side Projects - Lee Doughty" />
     <meta
       property="og:description"
-      content="Personal projects — mostly Japanese-learning tools."
+      content="Side projects — mostly Japanese-learning tools."
     />
     <meta property="og:type" content="website" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
@@ -30,8 +30,8 @@
     <section class="layout projects-layout">
       <header class="projects-header">
         <h2 class="section-title">
-          <span data-lang="en">Projects</span>
-          <span data-lang="ja">プロジェクト</span>
+          <span data-lang="en">Side Projects</span>
+          <span data-lang="ja">サイドプロジェクト</span>
         </h2>
         <p class="projects-subtitle" data-lang="en">
           five things i'm chipping away at &nbsp;·&nbsp; mostly
@@ -372,13 +372,13 @@
               アンキ・ともだち &nbsp;·&nbsp; Anki Friend
             </div>
             <p class="project-desc" data-lang="en">
-              Native menubar app that watches your Anki review session, surfaces
-              context for the card you're seeing, and lets a little mascot react
-              to streaks and slumps. Built so daily reviews feel less like a
-              chore.
+              RAG-powered CLI that turns your Anki deck into an interactive
+              knowledge base. Ask questions in Japanese or English to explore
+              vocabulary relationships, spot grammar gaps, and analyse study
+              stats, all grounded in the cards you've actually learned.
             </p>
             <p class="project-desc" data-lang="ja">
-              Ankiの復習セッションを見守るネイティブメニューバーアプリ。表示中のカードのコンテキストを表示し、連続正解やスランプにマスコットが反応します。毎日の復習を少しでも楽しくするために作りました。
+              Ankiデッキをインタラクティブなナレッジベースに変えるRAG搭載CLIツール。日本語・英語で質問して、語彙の関連性の探索、文法のギャップの発見、学習統計の分析ができます。
             </p>
             <div class="project-links">
               <a
@@ -388,19 +388,10 @@
                 rel="noopener"
                 >github.com/leedoughty/anki-tomodachi&nbsp;↗</a
               >
-              <span class="project-tag">· Electron</span>
               <span class="project-tag">· TypeScript</span>
-              <span class="project-tag">· AnkiConnect</span>
+              <span class="project-tag">· LangGraph</span>
+              <span class="project-tag">· ChromaDB</span>
             </div>
-          </div>
-          <div class="project-gif-col">
-            <div class="project-gif-placeholder">
-              <div class="gif-play-btn">
-                <div class="gif-play-triangle"></div>
-              </div>
-              <div class="gif-label">[ anki-tomodachi.gif ]</div>
-            </div>
-            <div class="project-fig">fig. 01 &nbsp;·&nbsp; 2025</div>
           </div>
         </article>
 
@@ -505,13 +496,13 @@
               アンキ・たんご &nbsp;·&nbsp; Anki Vocab
             </div>
             <p class="project-desc" data-lang="en">
-              Browser extension that pairs a popup dictionary with one-click
-              deck creation. Highlights pitch accent, example sentences from
-              Tatoeba, and auto-tags by JLPT level so your deck stays organised
-              without manual sorting.
+              CLI that generates Anki flashcards from sentences you encounter in
+              the wild. Collects text from markdown files, uses Claude to
+              identify unknown vocabulary, cross-references your existing deck,
+              and pushes formatted cards straight to Anki.
             </p>
             <p class="project-desc" data-lang="ja">
-              ポップアップ辞書とワンクリックデッキ作成を組み合わせたブラウザ拡張機能。ピッチアクセントやTatoebaの例文を表示し、JLPTレベルで自動タグ付けするので、手動で整理する必要がありません。
+              日常で出会った文章からAnkiフラッシュカードを自動生成するCLIツール。マークダウンファイルからテキストを収集し、Claudeで未知の語彙を特定、既存デッキと照合して、カードをAnkiに直接送信します。
             </p>
             <div class="project-links">
               <a
@@ -521,19 +512,10 @@
                 rel="noopener"
                 >github.com/leedoughty/anki-tango&nbsp;↗</a
               >
-              <span class="project-tag">· Chrome Ext</span>
               <span class="project-tag">· TypeScript</span>
-              <span class="project-tag">· Jisho API</span>
+              <span class="project-tag">· Claude API</span>
+              <span class="project-tag">· AnkiConnect</span>
             </div>
-          </div>
-          <div class="project-gif-col">
-            <div class="project-gif-placeholder">
-              <div class="gif-play-btn">
-                <div class="gif-play-triangle"></div>
-              </div>
-              <div class="gif-label">[ anki-tango.gif ]</div>
-            </div>
-            <div class="project-fig">fig. 02 &nbsp;·&nbsp; 2025</div>
           </div>
         </article>
 
@@ -610,8 +592,8 @@
                   stroke-width="5"
                 />
                 <line
-                  x1="160"
-                  y1="95"
+                  x1="163"
+                  y1="98"
                   x2="178"
                   y2="115"
                   stroke="#1c0d0a"
@@ -634,13 +616,13 @@
               アンキ・さがし &nbsp;·&nbsp; Anki Search
             </div>
             <p class="project-desc" data-lang="en">
-              CLI that indexes your Anki collection into SQLite FTS5 and lets
-              you grep across notes, tags and review history. Built because the
-              in-app browser was too slow on 60k-card collections.
+              CLI that mines Japanese text for vocabulary gaps against your Anki
+              deck. Feed it an article URL, file, or raw text and it identifies
+              words you haven't made flashcards for yet, ranked in a structured
+              report.
             </p>
             <p class="project-desc" data-lang="ja">
-              AnkiコレクションをSQLite
-              FTS5にインデックス化し、ノート・タグ・復習履歴を横断検索できるCLIツール。6万枚のカードでアプリ内ブラウザが遅すぎたので作りました。
+              日本語テキストからAnkiデッキに対する語彙ギャップを検出するCLIツール。記事のURL、ファイル、またはテキストを入力すると、まだカードを作っていない単語をランク付きレポートで出力します。
             </p>
             <div class="project-links">
               <a
@@ -650,19 +632,10 @@
                 rel="noopener"
                 >github.com/leedoughty/anki-sagashi&nbsp;↗</a
               >
-              <span class="project-tag">· Rust</span>
-              <span class="project-tag">· SQLite</span>
-              <span class="project-tag">· FTS5</span>
+              <span class="project-tag">· Python</span>
+              <span class="project-tag">· MeCab</span>
+              <span class="project-tag">· AnkiConnect</span>
             </div>
-          </div>
-          <div class="project-gif-col">
-            <div class="project-gif-placeholder">
-              <div class="gif-play-btn">
-                <div class="gif-play-triangle"></div>
-              </div>
-              <div class="gif-label">[ anki-sagashi.gif ]</div>
-            </div>
-            <div class="project-fig">fig. 03 &nbsp;·&nbsp; 2024</div>
           </div>
         </article>
 
@@ -677,102 +650,18 @@
                 height="110"
                 aria-hidden="true"
               >
-                <line
-                  x1="30"
-                  y1="40"
-                  x2="80"
-                  y2="80"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <line
-                  x1="80"
-                  y1="80"
-                  x2="130"
-                  y2="40"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <line
-                  x1="80"
-                  y1="80"
-                  x2="40"
-                  y2="125"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <line
-                  x1="80"
-                  y1="80"
-                  x2="125"
-                  y2="125"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <line
-                  x1="40"
-                  y1="125"
-                  x2="125"
-                  y2="125"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <circle
-                  cx="80"
-                  cy="80"
-                  r="22"
-                  fill="rgb(245,245,245)"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  class="project-logo-fill"
-                />
+                <circle cx="80" cy="80" r="62" fill="#3d58e3" />
                 <text
                   x="80"
-                  y="88"
+                  y="104"
                   text-anchor="middle"
-                  font-size="22"
+                  font-size="64"
                   font-weight="700"
-                  fill="currentColor"
+                  fill="#fff"
                   font-family="'Noto Sans JP', sans-serif"
                 >
                   字
                 </text>
-                <circle
-                  cx="30"
-                  cy="40"
-                  r="9"
-                  fill="rgb(245,245,245)"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  class="project-logo-fill"
-                />
-                <circle
-                  cx="130"
-                  cy="40"
-                  r="9"
-                  fill="rgb(245,245,245)"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  class="project-logo-fill"
-                />
-                <circle
-                  cx="40"
-                  cy="125"
-                  r="9"
-                  fill="rgb(245,245,245)"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  class="project-logo-fill"
-                />
-                <circle
-                  cx="125"
-                  cy="125"
-                  r="9"
-                  fill="rgb(245,245,245)"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  class="project-logo-fill"
-                />
               </svg>
             </div>
           </div>
@@ -780,13 +669,13 @@
             <h3 class="project-title">kanjimap</h3>
             <div class="project-kana">Kanji Map</div>
             <p class="project-desc" data-lang="en">
-              Interactive visualisation built with d3-force. Click a kanji and
-              the graph centres on it; related characters orbit by shared
-              radical or phonetic component. Useful for spotting groups of
-              look-alikes before they trip you up.
+              CLI that identifies gaps in your kanji knowledge. Import known
+              kanji from Anki exports and compare against frequency datasets and
+              real-world text to reveal which characters you haven't yet
+              mastered.
             </p>
             <p class="project-desc" data-lang="ja">
-              d3-forceで構築したインタラクティブな視覚化ツール。漢字をクリックするとグラフの中心に配置され、共通の部首や音符を持つ関連文字が周回します。似た漢字のグループを見つけるのに便利です。
+              漢字知識のギャップを特定するCLIツール。Ankiエクスポートから既知の漢字をインポートし、頻度データセットや実際のテキストと比較して、まだ習得していない漢字を明らかにします。
             </p>
             <div class="project-links">
               <a
@@ -796,19 +685,9 @@
                 rel="noopener"
                 >github.com/leedoughty/kanjimap&nbsp;↗</a
               >
-              <span class="project-tag">· D3</span>
-              <span class="project-tag">· Svelte</span>
-              <span class="project-tag">· KanjiVG</span>
+              <span class="project-tag">· Go</span>
+              <span class="project-tag">· KANJIDIC2</span>
             </div>
-          </div>
-          <div class="project-gif-col">
-            <div class="project-gif-placeholder">
-              <div class="gif-play-btn">
-                <div class="gif-play-triangle"></div>
-              </div>
-              <div class="gif-label">[ kanjimap.gif ]</div>
-            </div>
-            <div class="project-fig">fig. 04 &nbsp;·&nbsp; 2024</div>
           </div>
         </article>
 
@@ -823,79 +702,17 @@
                 height="110"
                 aria-hidden="true"
               >
-                <rect
-                  x="20"
-                  y="30"
-                  width="22"
-                  height="22"
-                  rx="3"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
                 <path
-                  d="M24 41 L31 47 L40 35"
-                  stroke="#3d58e3"
-                  stroke-width="3.5"
+                  d="M30 85 L60 115 L130 45"
+                  stroke="#7B3FE4"
+                  stroke-width="16"
                   fill="none"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
-                <line
-                  x1="55"
-                  y1="42"
-                  x2="135"
-                  y2="42"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <rect
-                  x="20"
-                  y="68"
-                  width="22"
-                  height="22"
-                  rx="3"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
                 <path
-                  d="M24 79 L31 85 L40 73"
-                  stroke="#3d58e3"
-                  stroke-width="3.5"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <line
-                  x1="55"
-                  y1="80"
-                  x2="125"
-                  y2="80"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <rect
-                  x="20"
-                  y="106"
-                  width="22"
-                  height="22"
-                  rx="3"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-                <line
-                  x1="55"
-                  y1="118"
-                  x2="115"
-                  y2="118"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <path
-                  d="M120 98 L123 105 L130 108 L123 111 L120 118 L117 111 L110 108 L117 105 Z"
-                  fill="#3d58e3"
+                  d="M125 90 L128 100 L138 103 L128 106 L125 116 L122 106 L112 103 L122 100 Z"
+                  fill="#9D6BF0"
                 />
               </svg>
             </div>
@@ -905,7 +722,7 @@
             <div class="project-kana">OmniFocus MCP</div>
             <p class="project-desc" data-lang="en">
               Exposes projects, tasks, perspectives and tags as MCP tools. Drop
-              it into Claude Desktop and ask "what's blocking me this week?" —
+              it into Claude Desktop and ask "what's blocking me this week?",
               the model can answer, then defer or complete tasks on your behalf.
               Read-only mode for the nervous.
             </p>
@@ -923,22 +740,13 @@
               >
               <span class="project-tag">· TypeScript</span>
               <span class="project-tag">· MCP</span>
-              <span class="project-tag">· AppleScript</span>
+              <span class="project-tag">· JXA</span>
             </div>
-          </div>
-          <div class="project-gif-col">
-            <div class="project-gif-placeholder">
-              <div class="gif-play-btn">
-                <div class="gif-play-triangle"></div>
-              </div>
-              <div class="gif-label">[ omnifocus-mcp.gif ]</div>
-            </div>
-            <div class="project-fig">fig. 05 &nbsp;·&nbsp; 2025</div>
           </div>
         </article>
       </div>
 
-      <div class="projects-end">— end of list —</div>
+      <div class="projects-end"></div>
     </section>
     <script type="module" src="main.js"></script>
   </body>
