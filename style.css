@@ -153,7 +153,7 @@ html[lang="ja"] .list-link {
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: #9097a4;
+  color: #7a8191;
   transition: color 160ms;
   display: flex;
   align-items: center;
@@ -183,7 +183,7 @@ html[lang="ja"] .list-link {
 }
 
 .dark-mode .theme-toggle {
-  color: #6b7280;
+  color: #8b929f;
 }
 
 .dark-mode .theme-toggle:hover,
