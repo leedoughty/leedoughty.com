@@ -38,6 +38,11 @@ html[lang="ja"] #homepage-text {
   font-weight: 300;
 }
 
+html[lang="ja"] #homepage-text .ja-para {
+  display: block;
+  margin-top: 2em;
+}
+
 html[lang="ja"] .about-intro,
 html[lang="ja"] .contact-intro,
 html[lang="ja"] .project-desc {
@@ -1078,7 +1083,7 @@ a {
 
 @media screen and (min-width: 1150px) {
   html[lang="ja"] #homepage-text {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   #artworks-container {
