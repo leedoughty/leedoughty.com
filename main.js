@@ -34,7 +34,7 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
 });
 
 // Dark mode toggle
-const lightSwitch = document.querySelector(".light-switch");
+const themeToggle = document.querySelector(".theme-toggle");
 
 if (
   window.matchMedia &&
@@ -61,7 +61,6 @@ function applyDarkMode() {
   document.querySelectorAll(".contact-link").forEach((link) => {
     link.classList.add("dark-mode-contact-links");
   });
-  lightSwitch.classList.add("dark-mode-light-switch");
 }
 
 function removeDarkMode() {
@@ -76,7 +75,6 @@ function removeDarkMode() {
   document.querySelectorAll(".contact-link").forEach((link) => {
     link.classList.remove("dark-mode-contact-links");
   });
-  lightSwitch.classList.remove("dark-mode-light-switch");
 }
 
 if (localStorage.getItem("isDarkMode") === "true") {
@@ -93,4 +91,4 @@ function toggleMode() {
   }
 }
 
-lightSwitch.addEventListener("click", toggleMode);
+themeToggle.addEventListener("click", toggleMode);

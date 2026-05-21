@@ -143,10 +143,70 @@ html[lang="ja"] .list-link {
   border-color: #dce3e9;
 }
 
+/* ---- Theme toggle ---- */
+
+.theme-toggle {
+  position: absolute;
+  top: 5vw;
+  right: 5vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #9097a4;
+  transition: color 160ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: #1a1f2b;
+}
+
+.theme-icon {
+  position: absolute;
+  transition:
+    opacity 200ms ease,
+    transform 300ms ease;
+}
+
+.theme-icon-sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.theme-icon-moon {
+  opacity: 0;
+  transform: rotate(-30deg);
+}
+
+.dark-mode .theme-toggle {
+  color: #6b7280;
+}
+
+.dark-mode .theme-toggle:hover,
+.dark-mode .theme-toggle:focus-visible {
+  color: #dce3e9;
+}
+
+.dark-mode .theme-icon-sun {
+  opacity: 0;
+  transform: rotate(30deg);
+}
+
+.dark-mode .theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   body,
   .lang-btn,
-  .lang-dot {
+  .lang-dot,
+  .theme-toggle,
+  .theme-icon {
     transition: none;
   }
 }
@@ -287,28 +347,6 @@ a {
   margin: 0;
 }
 
-.light-switch {
-  position: absolute;
-  top: 5vw;
-  right: 5vw;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: rgb(245, 245, 245);
-  border: 1.5px solid black;
-  cursor: pointer;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-.light-switch:hover {
-  background-color: #2e3440;
-}
-
-.light-switch:focus {
-  background-color: #2e3440;
-}
-
 .dark-mode {
   background-color: #2e3440;
   color: #dce3e9;
@@ -317,19 +355,6 @@ a {
 .dark-mode-nav-links {
   color: #dce3e9;
   border: 1.5px solid #dce3e9;
-}
-
-.dark-mode-light-switch {
-  border-color: #dce3e9;
-  border-style: solid;
-}
-
-.dark-mode-light-switch:hover {
-  background-color: #dce3e9;
-}
-
-.dark-mode-light-switch:focus {
-  background-color: #dce3e9;
 }
 
 .layout {
@@ -1089,7 +1114,7 @@ a {
     margin: 35px 5vw 0 5vw;
   }
 
-  .light-switch {
+  .theme-toggle {
     position: fixed;
     top: auto;
     left: 5vw;
