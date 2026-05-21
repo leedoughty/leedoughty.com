@@ -1,20 +1,51 @@
 <header id="header">
   <nav id="nav">
-    <a id="heading" href="index.html">Lee Doughty</a>
+    <a id="heading" href="index.html">
+      <span data-lang="en">Lee Doughty</span>
+      <span data-lang="ja">リー・ダウティ</span>
+    </a>
     <ul class="list-items">
       <li class="list-item">
-        <a class="list-link" href="artworks.html">Generative Art</a>
-      </li>
-      <!-- <li class="list-item">
-        <a class="list-link" href="projects.html">Projects</a>
-      </li> -->
-      <li class="list-item">
-        <a class="list-link" href="about.html">About</a>
+        <a class="list-link" href="artworks.html">
+          <span data-lang="en">Generative Art</span>
+          <span data-lang="ja">ジェネラティブアート</span>
+        </a>
       </li>
       <li class="list-item">
-        <a class="list-link" href="contact.html">Contact</a>
+        <a class="list-link" href="about.html">
+          <span data-lang="en">About</span>
+          <span data-lang="ja">プロフィール</span>
+        </a>
+      </li>
+      <li class="list-item">
+        <a class="list-link" href="contact.html">
+          <span data-lang="en">Contact</span>
+          <span data-lang="ja">お問い合わせ</span>
+        </a>
       </li>
     </ul>
+    <div class="lang-toggle" role="radiogroup" aria-label="Language">
+      <button
+        class="lang-btn"
+        data-set-lang="en"
+        aria-label="Switch to English"
+        aria-pressed="true"
+      >
+        <span class="lang-dot"></span>
+        <span class="lang-flag" aria-hidden="true">🇬🇧</span>
+        <span class="lang-label">EN</span>
+      </button>
+      <button
+        class="lang-btn"
+        data-set-lang="ja"
+        aria-label="日本語に切り替え"
+        aria-pressed="false"
+      >
+        <span class="lang-dot"></span>
+        <span class="lang-flag" aria-hidden="true">🇯🇵</span>
+        <span class="lang-label lang-label-ja">日本語</span>
+      </button>
+    </div>
   </nav>
 </header>
 <button class="light-switch" aria-label="Toggle dark mode"></button>

@@ -17,30 +17,48 @@
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <link rel="apple-touch-icon" href="logo192.png" />
     <link rel="stylesheet" href="https://use.typekit.net/jxn3olu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&family=Noto+Serif+JP:wght@300;400&display=swap"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     {{header}}
     <section class="layout about-layout">
       <div class="about-main">
-        <h2 class="section-title">About</h2>
+        <h2 class="section-title">
+          <span data-lang="en">About</span>
+          <span data-lang="ja">プロフィール</span>
+        </h2>
         <img id="picture-of-me" src="me.jpg" alt="Lee Doughty" />
-        <p class="about-intro">
+        <p class="about-intro" data-lang="en">
           Hi, I'm Lee, a Software Engineer based in Kanagawa, Japan with over
           seven years of experience building high-quality, user-focused
           software. I work across the full stack to deliver scalable, reliable
           applications.
         </p>
-        <p class="about-intro">
+        <p class="about-intro" data-lang="en">
           I care deeply about craft, writing clean, well-tested code and
           shipping products that people enjoy using. Outside of work, I explore
           creative coding and generative art, which keeps me curious and
           experimenting with new ideas.
         </p>
+        <p class="about-intro" data-lang="ja">
+          こんにちは、リーと申します。神奈川在住のソフトウェアエンジニアで、7年以上にわたり高品質でユーザー中心のソフトウェアを開発してきました。フルスタックで、スケーラブルで信頼性の高いアプリケーションを提供しています。
+        </p>
+        <p class="about-intro" data-lang="ja">
+          クリーンでテスト済みのコードを書き、ユーザーが楽しめるプロダクトを届けることにこだわっています。仕事以外では、クリエイティブコーディングやジェネラティブアートを探求し、新しいアイデアへの好奇心を持ち続けています。
+        </p>
       </div>
       <div class="skills-columns">
         <div class="skills-column">
-          <h3 class="skills-heading">Languages</h3>
+          <h3 class="skills-heading">
+            <span data-lang="en">Languages</span>
+            <span data-lang="ja">言語</span>
+          </h3>
           <ul class="skills-list">
             <li>TypeScript</li>
             <li>JavaScript</li>
@@ -52,7 +70,10 @@
           </ul>
         </div>
         <div class="skills-column">
-          <h3 class="skills-heading">Frontend</h3>
+          <h3 class="skills-heading">
+            <span data-lang="en">Frontend</span>
+            <span data-lang="ja">フロントエンド</span>
+          </h3>
           <ul class="skills-list">
             <li>React</li>
             <li>Next.js</li>
@@ -66,7 +87,10 @@
           </ul>
         </div>
         <div class="skills-column">
-          <h3 class="skills-heading">Backend</h3>
+          <h3 class="skills-heading">
+            <span data-lang="en">Backend</span>
+            <span data-lang="ja">バックエンド</span>
+          </h3>
           <ul class="skills-list">
             <li>Node.js</li>
             <li>Express</li>
@@ -82,7 +106,10 @@
           </ul>
         </div>
         <div class="skills-column">
-          <h3 class="skills-heading">Cloud & DevOps</h3>
+          <h3 class="skills-heading">
+            <span data-lang="en">Cloud & DevOps</span>
+            <span data-lang="ja">クラウド & DevOps</span>
+          </h3>
           <ul class="skills-list">
             <li>AWS</li>
             <li>Lambda</li>

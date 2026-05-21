@@ -1,3 +1,39 @@
+// Language toggle
+function getInitialLang() {
+  const stored = localStorage.getItem("site.lang");
+  if (stored) return stored;
+  return navigator.language?.startsWith("ja") ? "ja" : "en";
+}
+
+function setLang(lang, animate) {
+  if (animate && document.documentElement.lang === lang) return;
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.setAttribute("aria-pressed", btn.dataset.setLang === lang);
+  });
+
+  if (animate) {
+    document.documentElement.classList.add("lang-fading");
+    setTimeout(() => {
+      document.documentElement.lang = lang;
+      localStorage.setItem("site.lang", lang);
+      requestAnimationFrame(() => {
+        document.documentElement.classList.remove("lang-fading");
+      });
+    }, 160);
+  } else {
+    document.documentElement.lang = lang;
+    localStorage.setItem("site.lang", lang);
+  }
+}
+
+setLang(getInitialLang());
+
+document.querySelectorAll(".lang-btn").forEach((btn) => {
+  btn.addEventListener("click", () => setLang(btn.dataset.setLang, true));
+});
+
+// Dark mode toggle
 const lightSwitch = document.querySelector(".light-switch");
 
 if (

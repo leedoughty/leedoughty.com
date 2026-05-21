@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@300;400&display=swap"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -29,10 +29,17 @@
     {{header}}
     <section class="layout projects-layout">
       <header class="projects-header">
-        <h2 class="section-title">Projects</h2>
-        <p class="projects-subtitle">
+        <h2 class="section-title">
+          <span data-lang="en">Projects</span>
+          <span data-lang="ja">プロジェクト</span>
+        </h2>
+        <p class="projects-subtitle" data-lang="en">
           five things i'm chipping away at &nbsp;·&nbsp; mostly
           Japanese-learning tools &nbsp;·&nbsp; 2024&ndash;2025
+        </p>
+        <p class="projects-subtitle" data-lang="ja">
+          取り組み中の5つのプロジェクト &nbsp;·&nbsp; 主に日本語学習ツール
+          &nbsp;·&nbsp; 2024&ndash;2025
         </p>
       </header>
 
@@ -364,11 +371,14 @@
             <div class="project-kana">
               アンキ・ともだち &nbsp;·&nbsp; Anki Friend
             </div>
-            <p class="project-desc">
+            <p class="project-desc" data-lang="en">
               Native menubar app that watches your Anki review session, surfaces
               context for the card you're seeing, and lets a little mascot react
               to streaks and slumps. Built so daily reviews feel less like a
               chore.
+            </p>
+            <p class="project-desc" data-lang="ja">
+              Ankiの復習セッションを見守るネイティブメニューバーアプリ。表示中のカードのコンテキストを表示し、連続正解やスランプにマスコットが反応します。毎日の復習を少しでも楽しくするために作りました。
             </p>
             <div class="project-links">
               <a
@@ -494,11 +504,14 @@
             <div class="project-kana">
               アンキ・たんご &nbsp;·&nbsp; Anki Vocab
             </div>
-            <p class="project-desc">
+            <p class="project-desc" data-lang="en">
               Browser extension that pairs a popup dictionary with one-click
               deck creation. Highlights pitch accent, example sentences from
               Tatoeba, and auto-tags by JLPT level so your deck stays organised
               without manual sorting.
+            </p>
+            <p class="project-desc" data-lang="ja">
+              ポップアップ辞書とワンクリックデッキ作成を組み合わせたブラウザ拡張機能。ピッチアクセントやTatoebaの例文を表示し、JLPTレベルで自動タグ付けするので、手動で整理する必要がありません。
             </p>
             <div class="project-links">
               <a
@@ -620,10 +633,14 @@
             <div class="project-kana">
               アンキ・さがし &nbsp;·&nbsp; Anki Search
             </div>
-            <p class="project-desc">
+            <p class="project-desc" data-lang="en">
               CLI that indexes your Anki collection into SQLite FTS5 and lets
               you grep across notes, tags and review history. Built because the
               in-app browser was too slow on 60k-card collections.
+            </p>
+            <p class="project-desc" data-lang="ja">
+              AnkiコレクションをSQLite
+              FTS5にインデックス化し、ノート・タグ・復習履歴を横断検索できるCLIツール。6万枚のカードでアプリ内ブラウザが遅すぎたので作りました。
             </p>
             <div class="project-links">
               <a
@@ -762,11 +779,14 @@
           <div class="project-text">
             <h3 class="project-title">kanjimap</h3>
             <div class="project-kana">Kanji Map</div>
-            <p class="project-desc">
+            <p class="project-desc" data-lang="en">
               Interactive visualisation built with d3-force. Click a kanji and
               the graph centres on it; related characters orbit by shared
               radical or phonetic component. Useful for spotting groups of
               look-alikes before they trip you up.
+            </p>
+            <p class="project-desc" data-lang="ja">
+              d3-forceで構築したインタラクティブな視覚化ツール。漢字をクリックするとグラフの中心に配置され、共通の部首や音符を持つ関連文字が周回します。似た漢字のグループを見つけるのに便利です。
             </p>
             <div class="project-links">
               <a
@@ -883,11 +903,15 @@
           <div class="project-text">
             <h3 class="project-title">omnifocus-mcp</h3>
             <div class="project-kana">OmniFocus MCP</div>
-            <p class="project-desc">
+            <p class="project-desc" data-lang="en">
               Exposes projects, tasks, perspectives and tags as MCP tools. Drop
               it into Claude Desktop and ask "what's blocking me this week?" —
               the model can answer, then defer or complete tasks on your behalf.
               Read-only mode for the nervous.
+            </p>
+            <p class="project-desc" data-lang="ja">
+              プロジェクト、タスク、パースペクティブ、タグをMCPツールとして公開。Claude
+              Desktopに追加して「今週のブロッカーは？」と聞けば、モデルが回答し、タスクの延期や完了も代行できます。慎重派のための読み取り専用モードも搭載。
             </p>
             <div class="project-links">
               <a

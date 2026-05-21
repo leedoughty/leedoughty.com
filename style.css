@@ -6,6 +6,151 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ---- Language switching ---- */
+
+[data-lang="ja"] {
+  display: none;
+}
+
+html[lang="ja"] [data-lang="en"] {
+  display: none;
+}
+
+html[lang="ja"] [data-lang="ja"] {
+  display: revert;
+}
+
+body {
+  transition: opacity 150ms ease;
+}
+
+html.lang-fading body {
+  opacity: 0;
+}
+
+/* ---- Japanese typography ---- */
+
+html[lang="ja"] #homepage-text {
+  font-family:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  font-size: 2em;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+html[lang="ja"] .about-intro,
+html[lang="ja"] .contact-intro,
+html[lang="ja"] .project-desc {
+  font-family:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+html[lang="ja"] .section-title,
+html[lang="ja"] .projects-subtitle {
+  font-family:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", monospace;
+}
+
+html[lang="ja"] #heading {
+  font-family:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+html[lang="ja"] .list-link {
+  font-family:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  padding: 10px 16px;
+}
+
+/* ---- Language toggle ---- */
+
+.lang-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 30px;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+  font-size: 12px;
+  color: #9097a4;
+  transition: color 160ms;
+}
+
+.lang-btn[aria-pressed="true"] {
+  color: #1a1f2b;
+}
+
+.lang-label-ja {
+  font-family:
+    "Noto Sans JP", "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
+}
+
+.lang-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1.2px solid #c5c8cf;
+  background: transparent;
+  flex-shrink: 0;
+  transition:
+    background-color 160ms,
+    border-color 160ms;
+}
+
+.lang-btn[aria-pressed="true"] .lang-dot {
+  background-color: #1a1f2b;
+  border-color: #1a1f2b;
+}
+
+.lang-flag {
+  font-family:
+    "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-size: 15px;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.dark-mode .lang-btn {
+  color: #6b7280;
+}
+
+.dark-mode .lang-btn[aria-pressed="true"] {
+  color: #dce3e9;
+}
+
+.dark-mode .lang-dot {
+  border-color: #4b5563;
+}
+
+.dark-mode .lang-btn[aria-pressed="true"] .lang-dot {
+  background-color: #dce3e9;
+  border-color: #dce3e9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .lang-btn,
+  .lang-dot {
+    transition: none;
+  }
+}
+
 #header {
   display: flex;
   align-items: center;
@@ -792,6 +937,11 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+  html[lang="ja"] #homepage-text {
+    font-size: 36px;
+    line-height: 1.7;
+  }
+
   #artworks-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -902,6 +1052,10 @@ a {
 }
 
 @media screen and (min-width: 1150px) {
+  html[lang="ja"] #homepage-text {
+    font-size: 40px;
+  }
+
   #artworks-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -941,6 +1095,13 @@ a {
     left: 5vw;
     bottom: 5vw;
     right: auto;
+  }
+
+  .lang-toggle {
+    position: fixed;
+    left: 5vw;
+    bottom: calc(5vw + 36px);
+    margin-top: 0;
   }
 
   #nav {
