@@ -34,7 +34,7 @@ setInterval(() => {
 
   svg.querySelectorAll(".shape").forEach((shape) => {
     shape.style.fill = generateColour();
-    shape.style.mixBlendMode = "multiply";
+    shape.style.mixBlendMode = "screen";
 
     if (window.innerWidth < 600) {
       svg.setAttribute("width", "300px");
