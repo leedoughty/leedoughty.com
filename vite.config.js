@@ -10,14 +10,18 @@ const pages = fs.readdirSync("./works").reduce((entries, folder) => {
   return entries;
 }, {});
 
+const umamiScript = `<script defer src="https://lee-doughty-umami.vercel.app/script.js" data-website-id="14dc46cd-d286-4bc4-ad90-a0d6de32afc7"></script>`;
+
 function htmlPartials() {
   return {
     name: "html-partials",
     transformIndexHtml(html) {
-      return html.replace(
-        "{{header}}",
-        fs.readFileSync("./partials/header.html", "utf-8"),
-      );
+      return html
+        .replace(
+          "{{header}}",
+          fs.readFileSync("./partials/header.html", "utf-8"),
+        )
+        .replace("</head>", `${umamiScript}\n</head>`);
     },
   };
 }
