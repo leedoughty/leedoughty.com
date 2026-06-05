@@ -76,8 +76,8 @@ html[lang="ja"] .list-link {
 
 .lang-toggle {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  gap: 24px;
   margin-top: 30px;
 }
 
@@ -1133,6 +1133,8 @@ a {
     left: 5vw;
     bottom: calc(5vw + 36px);
     margin-top: 0;
+    flex-direction: column;
+    gap: 4px;
   }
 
   #nav {
