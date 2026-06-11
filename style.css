@@ -458,6 +458,9 @@ a {
 .contact-link[data-brand="github"] {
   --brand-color: #8b5cf6;
 }
+.contact-link[data-brand="linkedin"] {
+  --brand-color: #0a66c2;
+}
 .contact-link[data-brand="x"] {
   --brand-color: #1d9bf0;
 }
@@ -495,6 +498,10 @@ a {
   animation: icon-github 0.5s ease;
 }
 
+.contact-link[data-brand="linkedin"]:hover .contact-icon {
+  animation: icon-linkedin 0.5s ease;
+}
+
 .contact-link[data-brand="x"]:hover .contact-icon {
   animation: icon-x 0.4s ease;
 }
@@ -525,6 +532,16 @@ a {
 }
 
 @keyframes icon-github {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes icon-linkedin {
   0%,
   100% {
     transform: scale(1);
