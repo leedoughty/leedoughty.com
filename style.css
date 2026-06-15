@@ -620,6 +620,31 @@ a {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1149px) {
+  .contact-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+    margin-bottom: 72px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact-links {
+    margin-bottom: 72px;
+  }
+
+  .contact-link {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 16px 16px;
+  }
+}
+
 .about-intro {
   font-family:
     "farnham-display", Garamond, Cambria, Cochin, Georgia, Times,
