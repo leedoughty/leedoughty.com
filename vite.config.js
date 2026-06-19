@@ -16,6 +16,12 @@ function htmlPartials() {
   return {
     name: "html-partials",
     transformIndexHtml(html) {
+      // Only header pages have the toggle, so skip the init on standalone canvas pages.
+      if (html.includes("{{header}}")) {
+        const headInit = fs.readFileSync("./partials/head-init.html", "utf-8");
+        html = html.replace("<head>", `<head>\n${headInit}`);
+      }
+
       return html
         .replace(
           "{{header}}",

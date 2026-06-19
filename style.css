@@ -352,12 +352,16 @@ a {
   margin: 0;
 }
 
-.dark-mode {
+/* Dark mode is driven by the `dark-mode` class on <html> (set before paint by
+   partials/head-init.html) so styling applies on first render with no flash. */
+html.dark-mode body,
+html.dark-mode #heading,
+html.dark-mode .work-title {
   background-color: #2e3440;
   color: #dce3e9;
 }
 
-.dark-mode-nav-links {
+html.dark-mode .list-link {
   color: #dce3e9;
   border: 1.5px solid #dce3e9;
 }
@@ -596,13 +600,13 @@ a {
   }
 }
 
-.dark-mode-contact-links {
+html.dark-mode .contact-link {
   color: #dce3e9;
   border: 1.5px solid #dce3e9;
 }
 
-.dark-mode-contact-links:hover,
-.dark-mode-contact-links:focus {
+html.dark-mode .contact-link:hover,
+html.dark-mode .contact-link:focus {
   border-color: var(--brand-color);
 }
 

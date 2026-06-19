@@ -1,0 +1,23 @@
+<script>
+  // Must stay a classic inline script: a module would defer past first paint and reintroduce the FOUC.
+  function applyStoredPreferences() {
+    try {
+      const storedLang = localStorage.getItem("site.lang");
+      document.documentElement.lang =
+        storedLang || (navigator.language?.startsWith("ja") ? "ja" : "en");
+
+      let theme = localStorage.getItem("isDarkMode");
+      if (theme === null) {
+        theme = String(
+          window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false,
+        );
+        localStorage.setItem("isDarkMode", theme);
+      }
+      if (theme === "true") document.documentElement.classList.add("dark-mode");
+    } catch {
+      // localStorage throws when site data is blocked; defaults are the right fallback.
+    }
+  }
+
+  applyStoredPreferences();
+</script>
