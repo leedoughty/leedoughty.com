@@ -871,6 +871,10 @@ html.dark-mode .contact-link:focus {
   text-decoration: underline;
 }
 
+.project-arrow {
+  margin-left: 0.4em;
+}
+
 .project-tag {
   font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
   font-size: 11px;
@@ -1013,6 +1017,108 @@ html.dark-mode .contact-link:focus {
   overflow: hidden;
 }
 
+/* ---- Side Projects: mobile layout (icon beside title, full-width body) ---- */
+@media screen and (max-width: 767px) {
+  .project-row {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    column-gap: 20px;
+    padding: 24px 0 26px;
+  }
+
+  .project-row .project-left,
+  .project-text {
+    display: contents;
+  }
+
+  .project-char {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: center;
+    justify-self: start;
+    width: 84px;
+    height: 84px;
+  }
+
+  .project-index {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 12.5px;
+  }
+
+  .project-title {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 27px;
+  }
+
+  .project-kana {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+    margin-top: 3px;
+    font-size: 13px;
+  }
+
+  .project-desc {
+    grid-column: 1 / -1;
+    margin-top: 18px;
+    font-size: 18px;
+  }
+
+  .project-links {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .project-github {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    max-width: 100%;
+    padding: 13px 15px;
+    border-radius: 11px;
+  }
+
+  .project-url {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13.5px;
+  }
+
+  .project-arrow {
+    flex: none;
+    margin-left: 0;
+    font-size: 15px;
+    color: var(--brand, currentColor);
+  }
+
+  .project-github:hover {
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.045);
+  }
+
+  .dark-mode .project-github:hover {
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 9px 18px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   html[lang="ja"] #homepage-text {
     font-size: 36px;
@@ -1109,6 +1215,10 @@ html.dark-mode .contact-link:focus {
   .project-github {
     font-size: 12px;
     padding: 7px 12px;
+  }
+
+  .project-tags {
+    display: contents;
   }
 
   .project-tag {
