@@ -856,6 +856,11 @@ html.dark-mode .contact-link:focus {
   max-height: 100%;
 }
 
+.project-char > svg {
+  transform: scale(1.12);
+  transform-origin: center;
+}
+
 .project-title {
   margin: 0;
   font-family:
@@ -1096,6 +1101,10 @@ html.dark-mode .contact-link:focus {
     justify-self: start;
     width: 84px;
     height: 84px;
+  }
+
+  .project-char > svg {
+    transform: scale(1.25);
   }
 
   .project-index {
