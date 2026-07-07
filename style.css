@@ -375,11 +375,11 @@ html.dark-mode .list-link {
 .section-title {
   font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
   font-weight: 700;
-  color: rgb(135, 135, 135);
+  color: #4b5563;
 }
 
 .dark-mode .section-title {
-  color: rgb(180, 180, 180);
+  color: #c3ccd6;
 }
 
 #picture-of-me {
@@ -798,14 +798,14 @@ html.dark-mode .contact-link:focus {
 
 .projects-subtitle {
   font-family: "roboto-mono", "Open Sans", "Helvetica Neue", monospace;
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.55);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
   margin: 10px 0 0;
   letter-spacing: 0.02em;
 }
 
 .dark-mode .projects-subtitle {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .projects-list {
@@ -880,14 +880,15 @@ html.dark-mode .contact-link:focus {
 .project-kana {
   font-family:
     "roboto-mono", "Noto Sans JP", "Open Sans", "Helvetica Neue", monospace;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.55);
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
   margin-top: 4px;
   letter-spacing: 0.04em;
 }
 
 .dark-mode .project-kana {
-  color: rgba(255, 255, 255, 0.5);
+  color: #9ca3af;
 }
 
 .project-desc {
