@@ -29,7 +29,16 @@
     {{header}}
     <main id="homepage-container">
       <p id="homepage-text">
-        <img id="homepage-face" src="me-2.jpg" alt="Lee Doughty" />
+        <picture>
+          <source srcset="me-face.webp" type="image/webp" />
+          <img
+            id="homepage-face"
+            src="me-face.jpg"
+            width="160"
+            height="160"
+            alt="Lee Doughty"
+          />
+        </picture>
         <span data-lang="en"
           >Hi, I'm Lee, a Software Engineer with over seven years of experience
           building scalable, user-focused software. I care about clean code,
