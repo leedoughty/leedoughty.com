@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import fs from "fs";
+import { execSync } from "child_process";
 
 const pages = fs.readdirSync("./works").reduce((entries, folder) => {
   if (fs.existsSync(`./works/${folder}/index.html`)) {
@@ -32,8 +33,55 @@ function htmlPartials() {
   };
 }
 
+const SITE_URL = "https://leedoughty.com";
+
+function lastmod(file) {
+  try {
+    // Falls back to file mtime when git history is unavailable (e.g. some CI builds).
+    const date = execSync(`git log -1 --pretty=format:%cs -- "${file}"`, {
+      encoding: "utf-8",
+    }).trim();
+    if (date) return date;
+  } catch {}
+
+  return fs.statSync(file).mtime.toISOString().slice(0, 10);
+}
+
+function sitemap() {
+  return {
+    name: "sitemap",
+    apply: "build",
+    generateBundle() {
+      const urls = [
+        { path: "/", file: "index.html" },
+        { path: "/about.html", file: "about.html" },
+        { path: "/artworks.html", file: "artworks.html" },
+        { path: "/projects.html", file: "projects.html" },
+        { path: "/contact.html", file: "contact.html" },
+        ...Object.keys(pages).map((folder) => ({
+          path: `/works/${folder}/index.html`,
+          file: `works/${folder}/index.html`,
+        })),
+      ];
+
+      const entries = urls
+        .map(
+          ({ path, file }) =>
+            `  <url>\n    <loc>${SITE_URL}${path}</loc>\n    <lastmod>${lastmod(file)}</lastmod>\n  </url>`,
+        )
+        .join("\n");
+
+      this.emitFile({
+        type: "asset",
+        fileName: "sitemap.xml",
+        source: `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`,
+      });
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [htmlPartials()],
+  plugins: [htmlPartials(), sitemap()],
   build: {
     rollupOptions: {
       input: {
