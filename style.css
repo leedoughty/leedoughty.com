@@ -931,8 +931,16 @@ html.dark-mode .contact-link:focus {
   border-color: #dce3e9;
 }
 
-.project-github:hover {
-  text-decoration: underline;
+.project-github:hover,
+.dark-mode .project-github:hover {
+  text-decoration: none;
+  border-color: var(--brand);
+  background: rgba(0, 0, 0, 0.045);
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+}
+
+.project-github:hover .project-arrow {
+  color: var(--brand);
 }
 
 .project-arrow {
@@ -1170,14 +1178,6 @@ html.dark-mode .contact-link:focus {
     color: var(--brand, currentColor);
   }
 
-  .project-github:hover {
-    text-decoration: none;
-    background: rgba(0, 0, 0, 0.045);
-  }
-
-  .dark-mode .project-github:hover {
-    background: rgba(255, 255, 255, 0.07);
-  }
 
   .project-tags {
     display: flex;
